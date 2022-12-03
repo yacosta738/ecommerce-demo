@@ -3,6 +3,74 @@
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<artifactId>demo</artifactId>
+	<description>Demo project for ecommerce Spring Boot</description>
+	<groupId>com.ecommerce</groupId>
+	<modelVersion>4.0.0</modelVersion>
+	<name>demo</name>
+	<parent>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<groupId>org.springframework.boot</groupId>
+		<relativePath/>
+		<version>3.0.0</version> <!-- lookup parent from repository -->
+	</parent>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+
+	<version>0.0.1-SNAPSHOT</version>
+
+	<dependencies>
+		<dependency>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<groupId>org.springframework.boot</groupId>
+		</dependency>
+		<dependency>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<groupId>org.springframework.boot</groupId>
+		</dependency>
+		<dependency>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.springframework.boot</groupId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+
+		<dependency>
+			<artifactId>spring-boot-devtools</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<optional>true</optional>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<artifactId>h2</artifactId>
+			<groupId>com.h2database</groupId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+		<dependency>
+			<artifactId>lombok</artifactId>
+			<groupId>org.projectlombok</groupId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<artifactId>jackson-module-blackbird</artifactId>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<version>2.13.3</version>
+		</dependency>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -41,61 +109,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<dependencies>
-		<dependency>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-			<groupId>org.springframework.boot</groupId>
-		</dependency>
-		<dependency>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<groupId>org.springframework.boot</groupId>
-		</dependency>
-		<dependency>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<groupId>org.springframework.boot</groupId>
-		</dependency>
-
-		<dependency>
-			<artifactId>spring-boot-devtools</artifactId>
-			<groupId>org.springframework.boot</groupId>
-			<optional>true</optional>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<artifactId>h2</artifactId>
-			<groupId>com.h2database</groupId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<artifactId>lombok</artifactId>
-			<groupId>org.projectlombok</groupId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<groupId>org.springframework.boot</groupId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<artifactId>jackson-module-blackbird</artifactId>
-			<groupId>com.fasterxml.jackson.module</groupId>
-			<version>2.13.3</version>
-		</dependency>
-	</dependencies>
-	<description>Demo project for ecommerce Spring Boot</description>
-	<groupId>com.ecommerce</groupId>
-	<modelVersion>4.0.0</modelVersion>
-	<name>demo</name>
-	<parent>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<groupId>org.springframework.boot</groupId>
-		<relativePath/>
-		<version>3.0.0</version> <!-- lookup parent from repository -->
-	</parent>
-	<properties>
-		<java.version>17</java.version>
-	</properties>
-
-	<version>0.0.1-SNAPSHOT</version>
-
 </project>
