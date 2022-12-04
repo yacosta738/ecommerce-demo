@@ -1,9 +1,11 @@
 package com.ecommerce.demo.price.application;
 
-public class InvalidDateException extends RuntimeException {
+import com.ecommerce.demo.exceptions.ApiException;
+
+public class InvalidDateException extends ApiException {
 
   public InvalidDateException(String message) {
-    super(message);
+    super("invalid_date", message, 400);
   }
 }
 
