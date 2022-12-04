@@ -1,3 +1,5 @@
+[![Java CI](https://github.com/yacosta738/ecommerce-demo/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/yacosta738/ecommerce-demo/actions/workflows/ci-cd.yml)
+
 # ecommerce-demo
 
 ## Running the demo
