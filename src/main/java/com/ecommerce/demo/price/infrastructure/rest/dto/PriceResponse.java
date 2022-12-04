@@ -17,10 +17,7 @@ public class PriceResponse {
   private Long productId;
   private Long  brandId;
   private Long priceList;
-  private LocalDateTime applicationDate;
+  private LocalDateTime date;
   private BigDecimal price;
 
-  public static PriceResponse empty() {
-    return PriceResponse.builder().build();
-  }
 }

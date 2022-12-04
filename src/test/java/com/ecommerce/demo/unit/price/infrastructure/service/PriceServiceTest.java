@@ -52,7 +52,7 @@ class PriceServiceTest {
   @Test
   void findPrice() {
     final var optionalPriceResponse = priceService.findPrice(PriceRequest.builder()
-        .applicationDate(LocalDateTime.parse(NOW))
+        .date(LocalDateTime.parse(NOW))
         .productId(PRODUCT_ID)
         .brandId(BRAND_ID)
         .build());
@@ -62,14 +62,14 @@ class PriceServiceTest {
     assertEquals(1L, priceResponse.getProductId());
     assertEquals(1L, priceResponse.getBrandId());
     assertEquals(1L, priceResponse.getPriceList());
-    assertEquals(LocalDateTime.parse(NOW), priceResponse.getApplicationDate());
+    assertEquals(LocalDateTime.parse(NOW), priceResponse.getDate());
     assertEquals(new BigDecimal("34.87"), priceResponse.getPrice());
   }
 
   @Test
   void findPriceNotFound() {
     final var priceResponse = priceService.findPrice(PriceRequest.builder()
-        .applicationDate(LocalDateTime.parse(NOW))
+        .date(LocalDateTime.parse(NOW))
         .productId(2L)
         .brandId(BRAND_ID)
         .build());
@@ -80,7 +80,7 @@ class PriceServiceTest {
   @Test
   void findPriceNotFoundByDate() {
     final var priceResponse = priceService.findPrice(PriceRequest.builder()
-        .applicationDate(LocalDateTime.parse("2000-08-14T10:15:30"))
+        .date(LocalDateTime.parse("2000-08-14T10:15:30"))
         .productId(PRODUCT_ID)
         .brandId(BRAND_ID)
         .build());

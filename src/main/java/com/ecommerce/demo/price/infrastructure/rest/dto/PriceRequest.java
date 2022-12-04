@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class PriceRequest {
-  private LocalDateTime applicationDate;
+  private LocalDateTime date;
   private Long productId;
   private Long brandId;
 }

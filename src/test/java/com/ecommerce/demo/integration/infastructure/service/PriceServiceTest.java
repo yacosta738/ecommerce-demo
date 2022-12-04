@@ -1,6 +1,8 @@
 package com.ecommerce.demo.integration.infastructure.service;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.ecommerce.demo.integration.IntegrationTest;
 import com.ecommerce.demo.price.infrastructure.rest.dto.PriceRequest;
@@ -17,7 +19,7 @@ class PriceServiceTest extends IntegrationTest {
   @Test
   void findPriceByProductIdAndBrandIdAndDateTest1() {
     var optionalPriceResponse = priceService.findPrice(PriceRequest.builder()
-        .applicationDate(LocalDateTime.parse("2020-06-14T10:00:00"))
+        .date(LocalDateTime.parse("2020-06-14T10:00:00"))
         .productId(35455L)
         .brandId(1L)
         .build());
@@ -27,7 +29,7 @@ class PriceServiceTest extends IntegrationTest {
     assertEquals(1, priceResponse.getBrandId());
     assertEquals(1, priceResponse.getPriceList());
     assertEquals(35455, priceResponse.getProductId());
-    assertEquals(LocalDateTime.parse("2020-06-14T10:00"), priceResponse.getApplicationDate());
+    assertEquals(LocalDateTime.parse("2020-06-14T10:00"), priceResponse.getDate());
     assertEquals(35.50, priceResponse.getPrice().doubleValue());
   }
 
@@ -35,7 +37,7 @@ class PriceServiceTest extends IntegrationTest {
   @Test
   void findPriceByProductIdAndBrandIdAndDateTest2() {
     var optionalPriceResponse = priceService.findPrice(PriceRequest.builder()
-        .applicationDate(LocalDateTime.parse("2020-06-14T16:00:00"))
+        .date(LocalDateTime.parse("2020-06-14T16:00:00"))
         .productId(35455L)
         .brandId(1L)
         .build());
@@ -45,14 +47,14 @@ class PriceServiceTest extends IntegrationTest {
     assertEquals(1, priceResponse.getBrandId());
     assertEquals(2, priceResponse.getPriceList());
     assertEquals(35455, priceResponse.getProductId());
-    assertEquals(LocalDateTime.parse("2020-06-14T16:00"), priceResponse.getApplicationDate());
+    assertEquals(LocalDateTime.parse("2020-06-14T16:00"), priceResponse.getDate());
     assertEquals(25.45, priceResponse.getPrice().doubleValue());
   }
   // Test 3: petición a las 21:00 del día 14 del producto 35455 para la brand 1 (ZARA)
   @Test
   void findPriceByProductIdAndBrandIdAndDateTest3() {
     var optionalPriceResponse = priceService.findPrice(PriceRequest.builder()
-        .applicationDate(LocalDateTime.parse("2020-06-14T21:00:00"))
+        .date(LocalDateTime.parse("2020-06-14T21:00:00"))
         .productId(35455L)
         .brandId(1L)
         .build());
@@ -62,7 +64,7 @@ class PriceServiceTest extends IntegrationTest {
     assertEquals(1, priceResponse.getBrandId());
     assertEquals(1, priceResponse.getPriceList());
     assertEquals(35455, priceResponse.getProductId());
-    assertEquals(LocalDateTime.parse("2020-06-14T21:00"), priceResponse.getApplicationDate());
+    assertEquals(LocalDateTime.parse("2020-06-14T21:00"), priceResponse.getDate());
     assertEquals(35.50, priceResponse.getPrice().doubleValue());
   }
 
@@ -70,7 +72,7 @@ class PriceServiceTest extends IntegrationTest {
   @Test
   void findPriceByProductIdAndBrandIdAndDateTest4() {
     var optionalPriceResponse = priceService.findPrice(PriceRequest.builder()
-        .applicationDate(LocalDateTime.parse("2020-06-15T10:00:00"))
+        .date(LocalDateTime.parse("2020-06-15T10:00:00"))
         .productId(35455L)
         .brandId(1L)
         .build());
@@ -80,7 +82,7 @@ class PriceServiceTest extends IntegrationTest {
     assertEquals(1, priceResponse.getBrandId());
     assertEquals(3, priceResponse.getPriceList());
     assertEquals(35455, priceResponse.getProductId());
-    assertEquals(LocalDateTime.parse("2020-06-15T10:00"), priceResponse.getApplicationDate());
+    assertEquals(LocalDateTime.parse("2020-06-15T10:00"), priceResponse.getDate());
     assertEquals(30.50, priceResponse.getPrice().doubleValue());
   }
 
@@ -88,7 +90,7 @@ class PriceServiceTest extends IntegrationTest {
   @Test
   void findPriceByProductIdAndBrandIdAndDateTest5() {
     var optionalPriceResponse = priceService.findPrice(PriceRequest.builder()
-        .applicationDate(LocalDateTime.parse("2020-06-16T21:00:00"))
+        .date(LocalDateTime.parse("2020-06-16T21:00:00"))
         .productId(35455L)
         .brandId(1L)
         .build());
@@ -98,7 +100,7 @@ class PriceServiceTest extends IntegrationTest {
     assertEquals(1, priceResponse.getBrandId());
     assertEquals(4, priceResponse.getPriceList());
     assertEquals(35455, priceResponse.getProductId());
-    assertEquals(LocalDateTime.parse("2020-06-16T21:00"), priceResponse.getApplicationDate());
+    assertEquals(LocalDateTime.parse("2020-06-16T21:00"), priceResponse.getDate());
     assertEquals(38.95, priceResponse.getPrice().doubleValue());
   }
 }

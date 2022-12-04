@@ -36,7 +36,7 @@ public class PriceController {
    * GET /api/price?applicationDate=2020-05-10T11:15:30&productId=35455&brandId=1
    * Finds the price of a product.
    *
-   * @param applicationDate the application date.
+   * @param date the application date.
    * @param productId the product id.
    * @param brandId the brand id.
    * @return the price of the product. If there is no price for the product, it returns 404
@@ -45,13 +45,13 @@ public class PriceController {
    */
   @GetMapping(value = "/price", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<PriceResponse> findPrice(
-      @RequestParam(name = "applicationDate") String applicationDate,
+      @RequestParam(name = "date") String date,
       @RequestParam(name = "productId") Long productId,
       @RequestParam(name = "brandId") Long brandId) {
-    log.info("Request received: applicationDate={}, productId={}, brandId={}", applicationDate,
+    log.info("Request received: date={}, productId={}, brandId={}", date,
         productId, brandId);
     Optional<PriceResponse> optionalPriceResponse = priceService.findPrice(PriceRequest.builder()
-        .applicationDate(LocalDateTime.parse(applicationDate))
+        .date(LocalDateTime.parse(date))
         .productId(productId)
         .brandId(brandId)
         .build());

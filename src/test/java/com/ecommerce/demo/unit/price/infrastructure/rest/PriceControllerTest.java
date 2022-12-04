@@ -28,14 +28,14 @@ class PriceControllerTest {
     PriceService priceService = mock(PriceService.class);
     priceController = new PriceController(priceService);
     when(priceService.findPrice(PriceRequest.builder()
-        .applicationDate(LocalDateTime.parse(NOW))
+        .date(LocalDateTime.parse(NOW))
         .brandId(BRAND_ID)
         .productId(PRODUCT_ID)
         .build()))
         .thenReturn(
             Optional.of(
                 PriceResponse.builder()
-                    .applicationDate(LocalDateTime.parse(NOW))
+                    .date(LocalDateTime.parse(NOW))
                     .brandId(BRAND_ID)
                     .productId(PRODUCT_ID)
                     .priceList(1L)
@@ -58,7 +58,7 @@ class PriceControllerTest {
     assertNotNull(body);
     assertEquals(PRODUCT_ID, body.getProductId());
     assertEquals(BRAND_ID, body.getBrandId());
-    assertEquals(LocalDateTime.parse(NOW), body.getApplicationDate());
+    assertEquals(LocalDateTime.parse(NOW), body.getDate());
     assertEquals(new BigDecimal("34.87"), body.getPrice());
     assertEquals(1L, body.getPriceList());
   }

@@ -28,8 +28,8 @@ public class PriceService {
    */
   public Optional<PriceResponse> findPrice(PriceRequest priceRequest) {
     log.info("Request received: {}", priceRequest);
-    return priceFinder.findPrice(priceRequest.getApplicationDate(), priceRequest.getProductId(),
+    return priceFinder.findPrice(priceRequest.getDate(), priceRequest.getProductId(),
         priceRequest.getBrandId())
-        .map(price -> priceResponseMapper.map(price, priceRequest.getApplicationDate()));
+        .map(price -> priceResponseMapper.map(price, priceRequest.getDate()));
   }
 }

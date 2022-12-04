@@ -16,7 +16,7 @@ public class PriceResponseMapper {
         .productId(price.getProductId().value())
         .brandId(price.getBrandId().value())
         .priceList(price.getPriceList().value())
-        .applicationDate(applicationDate)
+        .date(applicationDate)
         .price(price.getPrice().amount())
         .build();
   }

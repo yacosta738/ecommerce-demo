@@ -1,6 +1,7 @@
 package com.ecommerce.demo.price.infrastructure.persistence.jpa.mapper;
 
-import com.ecommerce.demo.price.domain.*;
+import com.ecommerce.demo.price.domain.CurrencyType;
+import com.ecommerce.demo.price.domain.Price;
 import com.ecommerce.demo.price.infrastructure.persistence.jpa.entities.PriceEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
