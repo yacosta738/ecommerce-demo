@@ -10,7 +10,7 @@ import com.ecommerce.demo.price.domain.exceptions.InvalidListException;
  */
 public class PriceList extends BaseValidateValueObject<Long> {
 
-  protected PriceList(Long value) {
+  public PriceList(Long value) {
     super(value);
   }
 

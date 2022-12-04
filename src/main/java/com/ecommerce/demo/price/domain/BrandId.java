@@ -9,7 +9,7 @@ import com.ecommerce.demo.price.domain.exceptions.InvalidIdException;
  */
 public class BrandId extends BaseValidateValueObject<Long> {
 
-  protected BrandId(Long value) {
+  public BrandId(Long value) {
     super(value);
   }
 

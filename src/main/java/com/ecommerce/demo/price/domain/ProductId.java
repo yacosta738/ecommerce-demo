@@ -6,7 +6,7 @@ import com.ecommerce.demo.price.domain.exceptions.InvalidIdException;
 
 public class ProductId extends BaseValidateValueObject<Long> {
 
-  protected ProductId(Long value) {
+  public ProductId(Long value) {
     super(value);
   }
 
