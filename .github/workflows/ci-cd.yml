@@ -18,3 +18,7 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven Wrapper
         run: ./mvnw clean package --file pom.xml
+      - name: Generate JaCoCo Badge
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          generate-branches-badge: true
