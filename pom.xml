@@ -66,6 +66,12 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-inline</artifactId>
+			<version>4.8.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<artifactId>jackson-module-blackbird</artifactId>
 			<groupId>com.fasterxml.jackson.module</groupId>
 			<version>2.13.3</version>

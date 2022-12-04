@@ -1,6 +1,5 @@
 package com.ecommerce.demo.price.infrastructure.persistence.jpa.mapper;
 
-import com.ecommerce.demo.common.domain.Money;
 import com.ecommerce.demo.price.domain.*;
 import com.ecommerce.demo.price.infrastructure.persistence.jpa.entities.PriceEntity;
 import lombok.extern.slf4j.Slf4j;
@@ -21,14 +20,14 @@ public class PriceMapper {
    */
   public Price priceEntityToPrice(PriceEntity priceEntity) {
     return Price.builder()
-        .id(new PriceId(priceEntity.getId()))
-        .priceList(new PriceList(priceEntity.getPriceList()))
-        .brandId(new BrandId(priceEntity.getBrandId()))
+        .id(priceEntity.getId())
+        .priceList(priceEntity.getPriceList())
+        .brandId(priceEntity.getBrandId())
         .startDate(priceEntity.getStartDate())
         .endDate(priceEntity.getEndDate())
-        .productId(new ProductId(priceEntity.getProductId()))
+        .productId(priceEntity.getProductId())
         .priority(priceEntity.getPriority())
-        .price(new Money(priceEntity.getPrice()))
+        .price(priceEntity.getPrice())
         .currencyType(CurrencyType.valueOf(priceEntity.getCurrencyType()))
         .build();
   }
