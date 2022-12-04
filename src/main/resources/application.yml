@@ -1,1 +1,43 @@
+# Default properties file
+spring:
+  jpa:
+    open-in-view: false
+  profiles:
+    active: ${SCOPE_SUFFIX:dev} # Comma-separated list of active profiles. Can be overridden by a command line switch.
+  mvc:
+    throw-exception-if-no-handler-found: true # Whether a "NoHandlerFoundException" should be thrown if no Handler was found to process a request.
+  web:
+    resources:
+      add-mappings: false
+  jackson:
+    serialization:
+      indent-output: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:file:./target/h2db/db/ecommerce;DB_CLOSE_DELAY=-1;MODE=LEGACY
+    username: demo
+    password:
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+flyway:
+  url: jdbc:h2:file:./target/h2db/db/ecommerce;DB_CLOSE_DELAY=-1;MODE=LEGACY
+  schemas: public
+  user: demo
+  password:
 
+server:
+  compression:
+    enabled: true # Whether response compression is enabled.
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json # Comma-separated list of MIME types that should be compressed.
+    min-response-size: 1024 # Minimum "Content-Length" value that is required for compression to be performed.
+
+
+app:
+  title: ecommerce-demo
+  description: '@project.description@'
+  version: '@project.version@'
