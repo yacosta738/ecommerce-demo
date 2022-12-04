@@ -80,17 +80,7 @@ public class Price implements Comparable<Price> {
 
   @Override
   public int compareTo(Price o) {
-
-    if (this.priceMoney.amount().compareTo(o.priceMoney.amount()) == 0
-        && this.currencyType == o.currencyType) {
-      return Integer.compare(this.priority, o.priority);
-    } else if (this.brandId.equals(o.brandId) && this.productId.equals(o.productId)
-        && this.startDate.equals(o.startDate) && this.endDate.equals(o.endDate)
-        && this.priceList.equals(o.priceList) && this.priority == o.priority) {
-      return 0;
-    } else {
-      return -1;
-    }
+    return this.priority - o.priority;
   }
 
   public static final class PriceBuilder {
