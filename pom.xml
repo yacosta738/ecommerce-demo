@@ -127,8 +127,8 @@
 				<configuration>
 					<excludes>
 						<exclude>**/com/ecommerce/**/dto/**</exclude>
-						<exclude>**/com/ecommerce/**/api/**</exclude>
-						<exclude>**/com/ecommerce/**/model/**</exclude>
+						<exclude>**/com/ecommerce/**/config/**</exclude>
+						<exclude>**/com/ecommerce/**/entities/**</exclude>
 						<exclude>**/com/ecommerce/**/exceptions/**</exclude>
 					</excludes>
 				</configuration>
