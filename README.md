@@ -12,6 +12,7 @@
 ### Prerequisites
 - Java 17 or higher
 - Maven 3.8.1 or higher
+- Spring Boot 3.0.0 or higher
 
 ## Running the tests
 
