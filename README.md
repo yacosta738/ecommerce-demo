@@ -1,4 +1,6 @@
 [![Java CI](https://github.com/yacosta738/ecommerce-demo/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/yacosta738/ecommerce-demo/actions/workflows/ci-cd.yml)
+![coverage](.github/badges/jacoco.svg)
+![branches coverage](.github/badges/branches.svg)
 
 # ecommerce-demo
 
